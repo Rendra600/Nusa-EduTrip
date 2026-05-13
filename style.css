@@ -1,0 +1,211 @@
+/* VARIABEL WARNA 
+   Mahasiswa dapat mengganti kode warna di bawah ini 
+*/
+:root {
+    --primary-color: #2563eb;    /* BIRU_PRIMARY */
+    --secondary-color: #10b981;  /* HIJAU_SECONDARY */
+    --accent-color: #1f2937;     /* HITAM_AKSEN */
+    --bg-main: #ffffff;          /* PUTIH_BACKGROUND */
+    --bg-section: #f3f4f6;       /* ABU_BACKGROUND_LIGHT */
+    --card-color: #fef3c7;       /* KUNING_CARD */
+    --text-main: #111827;        /* HITAM_TEKS_UTAMA */
+    --text-light: #6b7280;       /* ABU_TEKS_SEKUNDER */
+    --white: #ffffff;
+}
+
+/* RESET DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* NAVBAR */
+.navbar {
+    height: 70px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-main);
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+/* HERO SECTION */
+.hero-section {
+    padding: 140px 0 80px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.tagline {
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+/* TOMBOL */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary { background: var(--primary-color); color: var(--white); }
+.btn-secondary { background: var(--secondary-color); color: var(--white); }
+.btn-outline { border: 2px solid var(--primary-color); color: var(--primary-color); }
+.btn-outline-white { border: 2px solid var(--white); color: var(--white); }
+
+.btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* CARDS */
+.section-padding { padding: 80px 0; }
+.bg-light { background-color: var(--bg-section); }
+.bg-primary { background-color: var(--primary-color); color: white; }
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--card-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* FITUR */
+.grid-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.feature-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--secondary-color);
+}
+
+/* TIM */
+.grid-tim {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-card {
+    text-align: center;
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid var(--bg-section);
+}
+
+/* FOOTER */
+.footer {
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 40px 0;
+}
+
+/* RESPONSIVE */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; }
+.bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--text-main); }
+
+@media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .nav-links { display: none; } /* Implementasikan menu mobile via JS */
+    .menu-toggle { display: block; }
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+}
